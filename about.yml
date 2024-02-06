@@ -1,0 +1,11 @@
+name: Vitaly Kuznetsov
+job: QA Engineer
+level: junior
+email: Justdance163@yandex.ru
+description: I am a novice engineer, I like to study and improve my professional skills
+
+skills: # Список навыков в виде списка, можете написать сюда что-то свое
+  - Функциональное тестирование
+  - Написание багрепортов
+  - Слепая печать
+  - Английский язык B1
