@@ -1,64 +1,74 @@
 ---
 - summary: |
     Не закрывается окно оформленного заказа при клике на крестик 
-  environment: |
+environment: |
     Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. На любой странице выбираем 1 или несколько товаров
     2. Переходим в Cart
     3. Нажимаем кнопку Checkout
     4. В появившемся модальном окне нажимаем на крестик в правом верхнем углу
-  expected-result: |
+expected-result: |
     Модальное окно должно закрыться
-  actual-result: |
+actual-result: |
     Модальное окно не закрывается
 
 -  summary: |
     Не работает кнопка Store
-  environment: |
+environment: |
     Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. В хедере сайта нажать на Store
       expected-result: |
     Переход главную страницу сайта 
-  actual-result: |
+actual-result: |
     На странице ничего не происходит
 
 - summary: |
     Не отображается содержимое корзины при открытии корзины в новой вкладке
-  environment: |
+environment: |
     Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. На любой странице выбираем 1 или несколько товаров
     2. Правой кнопкой мыши выбираем Cart
     3. Выбираем открыть в новой вкладке
-  expected-result: |
+expected-result: |
     Корзина в открывшимся ново1 вкладке должна содержать товары добавленные ранее
-  actual-result: |
+actual-result: |
     Корзина пуста
 
 - summary: |
     Отсутсвует картинка-флага английского языка 
-  environment: |
+environment: |
     Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу магазина https://hexlet-products-store.vercel.app/
     2. Нажать "Language"
-  expected-result: |
+expected-result: |
     Должена отображаться картинка-флаг в соответствии с английским языком
-  actual-result: |
+actual-result: |
     Отображается сломанное изображение
   
 - summary: |
     В корзине остаются товары после успешного оформления заказа 
-  environment: |
+environment: |
     Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-  steps-to-reproduce: |
+steps-to-reproduce: |
     1. Зайти на страницу магазина https://hexlet-products-store.vercel.app/
     2. Добавить любой товар в корзину
     3. Зайти в "Корзина"
     4. Нажать "Оформить заказ"
-  expected-result: |
+expected-result: |
     После успешного оформления заказа товары из корзины должны исчезнуть
-  actual-result: |
+actual-result: |
     Остаются товары в корзине после успешного оформления заказа
+
+- summary: | 500 ошибка при оформлении заказа
+ environment: | Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+steps-to-reproduce: |
+1.открыть девтулз
+ 2.Добавить 1 любой товар 
+3.Перейти в корзину
+ 4.Нажать оформить заказ
+ expected-result: | Заказ успешно оформлен, в девтулз GET 200
+ actual-result: | В всплывающем окне " Заказ успешно оформлен" ошибка GET 500
