@@ -19,7 +19,7 @@
     Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
   steps-to-reproduce: |
     1. В хедере сайта нажать на Store
-      expected-result: |
+  expected-result: |
     Переход главную страницу сайта 
   actual-result: |
     На странице ничего не происходит
