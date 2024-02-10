@@ -75,54 +75,54 @@ bugreports:
       
   - summary: |
       Корзина остаётся полной после её очистки 
-   environment: |
+    environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-   steps-to-reproduce: |
+    steps-to-reproduce: |
      1. Добавляем в корзину один или несколько товаров
      2. Переходим в Cart
      3. Нажимаем на кнопку Clear Cart
      4. Кликаем на Store
-   expected-result: |
+    expected-result: |
      При попадании на главную страницу корзина должна быть пуста
-   actual-result: |
+    actual-result: |
      При попадании на главную страницу видим, что товары остались в корзине
 
   - summary: |
      Отсутсвует картинка-флага английского языка 
-   environment: |
+    environment: |
      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-   steps-to-reproduce: |
+    steps-to-reproduce: |
      1. Зайти на страницу магазина https://hexlet-products-store.vercel.app/
      2. Нажать "Language"
-   expected-result: |
+    expected-result: |
      Должена отображаться картинка-флаг в соответствии с английским языком
-   actual-result: |
+    actual-result: |
      Отображается сломанное изображение
   
   - summary: |
      В корзине остаются товары после успешного оформления заказа 
-   environment: |
+    environment: |
      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
-   steps-to-reproduce: |
+    steps-to-reproduce: |
      1. Зайти на страницу магазина https://hexlet-products-store.vercel.app/
      2. Добавить любой товар в корзину
      3. Зайти в "Корзина"
      4. Нажать "Оформить заказ"
-   expected-result: |
+    expected-result: |
      После успешного оформления заказа товары из корзины должны исчезнуть
-   actual-result: |
+    actual-result: |
      Остаются товары в корзине после успешного оформления заказа
 
   - summary: |
-    500 ошибка при оформлении заказа
-  environment: |
-    Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-  steps-to-reproduce: |
-    1.Открыть DevTools
-    2.Добавить 1 любой товар 
-    3.Перейти в корзину
-    4.Нажать оформить заказ
-  expected-result: |
-    Заказ успешно оформлен, в DevTools GET 200
-  actual-result: |
-    В всплывающем окне " Заказ успешно оформлен" ошибка GET 500     
+      500 ошибка при оформлении заказа
+    environment: |
+      Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+    steps-to-reproduce: |
+      1.Открыть DevTools
+      2.Добавить 1 любой товар 
+      3.Перейти в корзину
+      4.Нажать оформить заказ
+    expected-result: |
+      Заказ успешно оформлен, в DevTools GET 200
+    actual-result: |
+      В всплывающем окне " Заказ успешно оформлен" ошибка GET 500     
