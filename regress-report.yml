@@ -20,59 +20,105 @@ test-cases:
       Проверка удаления товара из корзины
     status: pass
 
+  - summary: |
+      Проверка фильтра по цене
+  status: pass
+
+  - summary: |
+      Поиск товара по ключевому слову "OPPO"
+  status: pass
+
+  - summary: |
+      Проверка смены языка
+  status: pass 
+
 bugreports:
   - summary: |
       Сбрасывается язык интерфейса при нажатии "Магазин"
-    environment: |
+  environment: |
       Версия 116.0.5845.111 (Официальная сборка), (64 бит)
       Windows 10
-    steps-to-reproduce: |
-      1. Зайти на страницу магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
-      2. Нажать "Язык"
-      3. Выбрать "Русский"
-      4. Нажать "Магазин"
-    expected-result: |
+  steps-to-reproduce: |
+     1. Зайти на страницу магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+     2. Нажать "Язык"
+     3. Выбрать "Русский"
+     4. Нажать "Магазин"
+  expected-result: |
       Язык интерфейса должен остаться на русском языке
-    actual-result: |
+  actual-result: |
       Язык интерфейса меняется на английский язык
 
   - summary: |
       При клике на Hexlet Store ссылка не активна
-    environment: |
+  environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-    steps-to-reproduce: |
-      1. Кликнуть на надпись Hexlet Store в хедере страницы
-    expected-result: |
+  steps-to-reproduce: |
+     1. Кликнуть на надпись Hexlet Store в хедере страницы
+  expected-result: |
       Страница должна перезагрузиться
-    actual-result: |
+  actual-result: |
       Страница не перзагружается
       
   - summary: |
       Корзина остаётся полной после перезагрузки страницы
-    environment: |
+  environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-    steps-to-reproduce: |
-      1. Добавляем в корзину один или несколько товаров
-      2. Переходим в Cart
-      3. Нажимаем на кнопку Clear Cart
-      4. Обновляем страницу
-    expected-result: |
+  steps-to-reproduce: |
+     1. Добавляем в корзину один или несколько товаров
+     2. Переходим в Cart
+     3. Нажимаем на кнопку Clear Cart
+     4. Обновляем страницу
+  expected-result: |
       После перезагрузки корзина должна быть пуста
-    actual-result: |
+  actual-result: |
       После перезагрузки товары остаются в корзине   
       
   - summary: |
       Корзина остаётся полной после её очистки 
-    environment: |
+  environment: |
       Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
-    steps-to-reproduce: |
-      1. Добавляем в корзину один или несколько товаров
-      2. Переходим в Cart
-      3. Нажимаем на кнопку Clear Cart
-      4. Кликаем на Store
-    expected-result: |
+  steps-to-reproduce: |
+     1. Добавляем в корзину один или несколько товаров
+     2. Переходим в Cart
+     3. Нажимаем на кнопку Clear Cart
+     4. Кликаем на Store
+  expected-result: |
       При попадании на главную страницу корзина должна быть пуста
-    actual-result: |
+  actual-result: |
       При попадании на главную страницу видим, что товары остались в корзине
 
-      
+ - summary: |
+    Отсутсвует картинка-флага английского языка 
+environment: |
+    Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+    1. Зайти на страницу магазина https://hexlet-products-store.vercel.app/
+    2. Нажать "Language"
+expected-result: |
+    Должена отображаться картинка-флаг в соответствии с английским языком
+actual-result: |
+    Отображается сломанное изображение
+  
+- summary: |
+    В корзине остаются товары после успешного оформления заказа 
+environment: |
+    Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит)
+steps-to-reproduce: |
+    1. Зайти на страницу магазина https://hexlet-products-store.vercel.app/
+    2. Добавить любой товар в корзину
+    3. Зайти в "Корзина"
+    4. Нажать "Оформить заказ"
+expected-result: |
+    После успешного оформления заказа товары из корзины должны исчезнуть
+actual-result: |
+    Остаются товары в корзине после успешного оформления заказа
+
+- summary: | 500 ошибка при оформлении заказа
+ environment: | Google Chrome Версия 119.0.6045.106 (Официальная сборка) (64 бит) 
+steps-to-reproduce: |
+    1.Открыть DevTools
+    2.Добавить 1 любой товар 
+    3.Перейти в корзину
+    4.Нажать оформить заказ
+ expected-result: | Заказ успешно оформлен, в DevTools GET 200
+ actual-result: | В всплывающем окне " Заказ успешно оформлен" ошибка GET 500     
